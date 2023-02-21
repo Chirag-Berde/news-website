@@ -1,0 +1,62 @@
+/* animation for heading */
+h1 {
+  position: relative;
+  color:black;
+}
+  .line {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 28%;
+    display: block;
+    margin-left: 38%;
+    background-color: black;
+    bottom: calc(50% - 25px);
+    animation: line 2000ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: left;
+    transform: translateX(0) scaleX(0);
+    animation-iteration-count: infinite;
+  }
+
+  .char {
+    display: inline-block;
+    position: relative;
+    animation-duration: 2000ms;
+    animation-fill-mode: forwards;
+    animation-name: kern;
+    animation-delay: calc(var(--char-index) * 5ms);
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    opacity: 0;
+    animation-iteration-count: infinite;
+  }
+
+
+@keyframes line {
+  45% {
+    transform: translateX(0) scaleX(0);
+  }
+  70% {
+    transform: translateX(0) scaleX(0.8);
+  }
+  100% {
+    transform: translateX(100%) scaleX(0);
+  }
+}
+
+@keyframes kern {
+  0%,
+  70% {
+    transform: translateX(calc((var(--char-index)) * 40px));
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    animation-timing-function: none;
+  }
+}
