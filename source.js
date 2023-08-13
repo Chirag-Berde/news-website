@@ -13,7 +13,7 @@ async function fetchNews() {
   console.log(news)
   news.forEach((item) => {
    return str += `
-     <div class="col-4">
+     <div class="col-4 ">
       <div class="card me-1 ms-5 mt-2 mb-3 shadow rounded  card-custom" style="width: 20rem;">
       <img src=${item["urlToImage"]} class="card-img-top" alt="item-image">
       <div class="card-body">

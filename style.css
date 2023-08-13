@@ -60,3 +60,9 @@ h1 {
     animation-timing-function: none;
   }
 }
+
+@media only screen and (max-width: 600px) {
+ .card-responsive{
+  flex-direction: column;
+ }
+}
